@@ -1,0 +1,31 @@
+{
+	"name": "pathfinder",
+	"version": "0.0.0",
+	"description": "",
+	"main": "index.js",
+	"engines": {
+		"node": ">= 10.13 <11"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0.15",
+		"@types/node": "^10.14.10",
+		"@typescript-eslint/eslint-plugin": "^2.1.0",
+		"@typescript-eslint/parser": "^2.1.0",
+		"eslint": "^6.3.0",
+		"jest": "~24.8.0",
+		"nodemon": "^1.19.1",
+		"rimraf": "^2.6.3",
+		"ts-jest": "^24.0.2",
+		"typescript": "~3.5.0",
+		"ts-node": "^8.3.0"
+	},
+	"scripts": {
+		"clean": "rimraf coverage dist",
+		"build": "tsc -p tsconfig.json",
+		"build:watch": "tsc -w -p tsconfig.release.json",
+		"dev": "nodemon --exec ts-node src/index.ts --file=examples/map3.txt --watch src",
+		"test": "jest --coverage --verbose",
+		"test:watch": "jest --watch",
+		"start": "npm run build && node dist\\index.js"
+	}
+}
